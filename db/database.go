@@ -14,7 +14,7 @@ func GormConnect() *gorm.DB {
 	PASS := "fb1ec773"
 	PROTOCOL := "us-cdbr-east-06.cleardb.net"
 	DBNAME := "heroku_d0a101037db1ece"
-	CONNECT := USER + ":" + PASS + "@tcp(" + PROTOCOL + ":3306)/" + DBNAME + "?reconnect=true"
+	CONNECT := USER + ":" + PASS + "@tcp(" + PROTOCOL + ":3306)/" + DBNAME + "?parseTime=true"
 
 	db, err := gorm.Open(DBMS, CONNECT)
 
