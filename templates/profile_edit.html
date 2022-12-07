@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロフィール編集ページ｜チャットボックス</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5337858c9f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__flex">
+            <div class="header__flex__left">
+                <a href="/">
+                    <h1>CHAT BOX</h1>
+                </a>
+            </div>
+            <div class="header__flex__right">
+                {{if ne .User nil}}
+                <a href="/profile?id={{.User_log}}">{{.User}}さん</a>
+                {{else}}
+                <a href="/registration">新規登録</a>
+                <a href="/login">ログイン</a>
+                {{end}}
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="back">
+            <a href="/profile?id={{.Id}}" class="fas fa-arrow-left"></a>
+        </div>
+        <div class="profile__edit">
+            <span class="profile__edit__title">{{.User_name}}</span>
+            <form action="/profile_edit" method="POST">
+                <div class="profile__edit__text">
+                    <p>自己紹介文：</p>
+                    <textarea name="message" rows="10">{{.Message}}</textarea>
+                </div>
+                <input type="hidden" name="id" value="{{.Id}}">
+                <div class="profile__edit__button">
+                    <input type="submit" value="プロフィール編集">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

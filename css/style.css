@@ -1,0 +1,493 @@
+body {
+    line-height: 1.5;
+    letter-spacing: .05em;
+    font-size: 16px;
+    background: #222222;
+}
+
+.header {
+    background: #000;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.header__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.header__flex__left a h1 {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__flex__left a {
+    text-decoration: none;
+}
+
+.header__flex__right a {
+    color: #fff;
+    margin-left: 10px;
+}
+
+main {
+    margin-top: 60px;
+}
+
+.new__post {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #54C500;
+    color: #fff;
+    padding: 20px;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.lists .lists__li {
+    border-bottom: 1px solid #999999;
+}
+
+.lists__li__box {
+    padding: 15px;
+    box-sizing: border-box;
+    display: block;
+    background: #222222;
+    text-decoration: none;
+}
+
+.lists__li__box__flex {
+    margin-bottom: 20px;
+}
+
+.lists__li__box__flex a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.lists__li__box__flex span {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #9c9c9c;
+    display: block;
+}
+
+.lists__li__box > p {
+    color: #fff;
+}
+
+.lists__li__box__edit {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.lists__li__box__edit a {
+    display: inline-block;
+    margin-left: 15px;
+    color: #fff;
+}
+
+.create {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.create__title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.create textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: #363636;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #8e8e8e;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.create__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.create__button input {
+    background: #54C500;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 32px;
+    border-radius: 5px;
+}
+
+.create__err p {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.ragistration {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.ragistration__err p {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.ragistration__box p {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.ragistration__box p span {
+    font-size: 14px;
+}
+
+.ragistration__box input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #363636;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #8e8e8e;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.ragistration__box:first-child {
+    margin-bottom: 15px;
+}
+
+.ragistration__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.ragistration__button input {
+    background: #54C500;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 32px;
+    border-radius: 5px;
+}
+
+.ragistration__title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.login {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.login__err p {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.login__box p {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.login__box input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #363636;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #8e8e8e;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login__box:first-child {
+    margin-bottom: 15px;
+}
+
+.login__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login__title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.login__button input {
+    background: #54C500;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 32px;
+    border-radius: 5px;
+}
+
+.login__box p span {
+    font-size: 14px;
+}
+
+.post__err {
+    padding: 15px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.profile__info {
+    padding: 15px 15px 25px 15px;
+    border-bottom: 1px solid #999999;
+}
+
+.profile__info__title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.profile__info__text__title {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.profile__info__text__message {
+    color: #fff;
+}
+
+.profile__info__user {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.profile__info__user a {
+    display: inline-block;
+    margin-left: 15px;
+    color: #fff;
+}
+
+.profile__err {
+    padding: 15px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.profile__edit {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.profile__edit__title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.profile__edit textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: #363636;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #8e8e8e;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.profile__edit__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.profile__edit__button input {
+    background: #54C500;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 32px;
+    border-radius: 5px;
+}
+
+.profile__edit__text p {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.back {
+    padding: 15px 15px 5px 15px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.back a {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.edit {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.edit__title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.edit textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: #363636;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #8e8e8e;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.edit__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.edit__button input {
+    background: #54C500;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 32px;
+    border-radius: 5px;
+}
+
+.edit__err {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.delete {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.delete > p {
+    color: #fff;
+}
+
+.delete__post__flex {
+    margin-bottom: 20px;
+}
+
+.delete__post__flex__title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.delete__post__flex span {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #9c9c9c;
+    display: block;
+}
+
+.delete__post > p {
+    color: #fff;
+}
+
+.delete__post {
+    margin-top: 25px;
+}
+
+.delete__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.delete__button input {
+    background: #54C500;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 32px;
+    border-radius: 5px;
+}
+
+.delete__err {
+    padding: 15px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.register {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    box-sizing: border-box;
+    padding: 0 20px;
+    height: 80px;
+}
+
+.register__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.register__flex a {
+    background: #54C500;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: calc(50% - 8px);
+    text-align: center;
+}
+
+.bottom {
+    height: 80px;
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規投稿ページ｜チャットボックス</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5337858c9f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__flex">
+            <div class="header__flex__left">
+                <a href="/">
+                    <h1>CHAT BOX</h1>
+                </a>
+            </div>
+            <div class="header__flex__right">
+                <a href="/profile?id={{.User_log}}">{{.User_name}}さん</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="back">
+            <a href="/" class="fas fa-arrow-left"></a>
+        </div>
+        <div class="create">
+            <span class="create__title">新規投稿</span>
+            {{if ne .Err ""}}
+            <div class="create__err">
+                <p>{{.Err}}</p>
+            </div>
+            {{end}}
+            <form action="/create" method="POST">
+                <textarea name="text" rows="10" placeholder="投稿の内容"></textarea>
+                <div class="create__button">
+                    <input type="submit" value="新規投稿">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

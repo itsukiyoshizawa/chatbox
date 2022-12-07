@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録ページ｜チャットボックス</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5337858c9f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__flex">
+            <div class="header__flex__left">
+                <a href="/">
+                    <h1>CHAT BOX</h1>
+                </a>
+            </div>
+            <div class="header__flex__right">
+                <a href="/login">ログイン</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="back">
+            <a href="/" class="fas fa-arrow-left"></a>
+        </div>
+        <div class="ragistration">
+            <span class="ragistration__title">新規登録</span>
+            {{if ne .Err ""}}
+            <div class="ragistration__err">
+                <p>{{.Err}}</p>
+            </div>
+            {{end}}
+            <form action="/registration" method="POST">
+                <div class="ragistration__box">
+                    <p>ユーザー名：</p>
+                    <input type="text" name="user_name" placeholder="ユーザー名">
+                </div>
+                <div class="ragistration__box">
+                    <p>パスワード：<br><span>(半角英語、数字4ケタ以上)</span></p>
+                    <input type="password" name="password" placeholder="パスワード">
+                </div>
+                <div class="ragistration__button">
+                    <input type="submit" value="新規登録">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

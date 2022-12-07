@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロフィールページ｜チャットボックス</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5337858c9f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__flex">
+            <div class="header__flex__left">
+                <a href="/">
+                    <h1>CHAT BOX</h1>
+                </a>
+            </div>
+            <div class="header__flex__right">
+                {{if ne .User nil}}
+                <a href="/profile?id={{.User_log}}">{{.User}}さん</a>
+                {{else}}
+                <a href="/registration">新規登録</a>
+                <a href="/login">ログイン</a>
+                {{end}}
+            </div>
+        </div>
+    </header>
+    {{if ne .User nil}}
+    <a href="/create" class="new__post">＋</a>
+    {{end}}
+    <main>
+        <div class="back">
+            <a href="/" class="fas fa-arrow-left"></a>
+        </div>
+        {{if ne .User_name ""}}
+        <div class="profile__info">
+            <span class="profile__info__title">{{.User_name}}</span>
+            <div class="profile__info__text">
+                <p class="profile__info__text__title">自己紹介文：</p>
+                <p class="profile__info__text__message">{{nl2br .Message}}</p>
+            </div>
+            {{if eq .Post_log .User_log}}
+            <div class="profile__info__user">
+                <a href="/profile_edit?id={{.User_log}}">プロフィールを編集する</a>
+                <a href="/logout">ログアウト</a>
+            </div>
+            {{end}}
+        </div>
+        {{else}}
+        <div class="profile__err">
+            <p>{{.Err}}</p>
+        </div>
+        {{end}}
+        <ul class="lists">
+            {{range .List}}
+            <li class="lists__li">
+                <a class="lists__li__box" href="/post?id={{.Id}}">
+                    <div class="lists__li__box__flex">
+                        <object><a href="javascript:void(0)" style="text-decoration: none;">{{.User_name}}</a></object>
+                        <span>{{.Date}}</span>
+                    </div>
+                    <p>{{nl2br .Text}}</p>
+                </a>
+            </li>
+            {{end}}
+        </ul>
+    </main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個別記事ページ｜チャットボックス</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5337858c9f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__flex">
+            <div class="header__flex__left">
+                <a href="/">
+                    <h1>CHAT BOX</h1>
+                </a>
+            </div>
+            <div class="header__flex__right">
+                {{if ne .User nil}}
+                <a href="/profile?id={{.User_log}}">{{.User}}さん</a>
+                {{else}}
+                <a href="/registration">新規登録</a>
+                <a href="/login">ログイン</a>
+                {{end}}
+            </div>
+        </div>
+    </header>
+    {{if ne .User nil}}
+    <a href="/create" class="new__post">＋</a>
+    {{end}}
+    <main>
+        <div class="back">
+            <a href="/" class="fas fa-arrow-left"></a>
+        </div>
+        {{if ne .User_name ""}}
+        <ul class="lists">
+            <li class="lists__li">
+                <div class="lists__li__box">
+                    <div class="lists__li__box__flex">
+                        <a href="/profile?id={{.User_id}}">{{.User_name}}</a>
+                        <span>{{.Date}}</span>
+                    </div>
+                    <p>{{nl2br .Text}}</p>
+                    {{if eq .User_log .User_id}}
+                    <div class="lists__li__box__edit">
+                        <a href="/edit?id={{.Id}}">編集</a>
+                        <a href="/delete?id={{.Id}}">削除</a>
+                    </div>
+                    {{end}}
+                </div>
+            </li>
+        </ul>
+        {{else}}
+        <div class="post__err">
+            <p>{{.Err}}</p>
+        </div>
+        {{end}}
+    </main>
+</body>
+</html>

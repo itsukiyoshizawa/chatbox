@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一覧ページ｜チャットボックス</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5337858c9f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__flex">
+            <div class="header__flex__left">
+                <a href="/">
+                    <h1>CHAT BOX</h1>
+                </a>
+            </div>
+            <div class="header__flex__right">
+                {{if ne .User nil}}
+                <a href="/profile?id={{.User_log}}">{{.User}}さん</a>
+                {{else}}
+                <a href="/registration">新規登録</a>
+                <a href="/login">ログイン</a>
+                {{end}}
+            </div>
+        </div>
+    </header>
+    {{if ne .User nil}}
+    <a href="/create" class="new__post">＋</a>
+    {{end}}
+    <main>
+        <ul class="lists">
+            {{$user_log := .User_log}}
+            {{range .List}}
+            <li class="lists__li">
+                <a class="lists__li__box" href="/post?id={{.Id}}">
+                    <div class="lists__li__box__flex">
+                        <object><a href="/profile?id={{.User_id}}">{{.User_name}}</a></object>
+                        <span>{{.Date}}</span>
+                    </div>
+                    <p>{{nl2br .Text}}</p>
+                </a>
+            </li>
+            {{end}}
+        </ul>
+    </main>
+    {{if eq .User nil}}
+    <div class="bottom"></div>
+    <div class="register">
+        <div class="register__flex">
+            <a href="/registration">新規登録</a>
+            <a href="/login">ログイン</a>
+        </div>
+    </div>
+    {{end}}
+</body>
+</html>
