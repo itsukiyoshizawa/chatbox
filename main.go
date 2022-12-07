@@ -66,7 +66,6 @@ func main() {
 	})
 
 	router.LoadHTMLGlob("templates/*.html")
-	// http.Handle("/css/", http.StripPrefix("/css", http.FileServer(http.Dir("./css/"))))
 	router.Static("/css", "css/")
 
 	var Err string
@@ -181,7 +180,7 @@ func main() {
 						Password:  Password,
 					}
 
-					Db.Table("users").Create(&user)
+					Db.Create(&user)
 					defer Db.Close()
 
 					db.Login(ctx, User_name)
