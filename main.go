@@ -181,7 +181,7 @@ func main() {
 						Password:  Password,
 					}
 
-					Db.Create(&user)
+					Db.Table("users").Create(&user)
 					defer Db.Close()
 
 					db.Login(ctx, User_name)
