@@ -33,7 +33,7 @@ type SessionInfo struct {
 func UserSelect(user_name string, password string) User {
 	d := GormConnect()
 	loginData := User{}
-	d.First(&loginData, "user_name=? and password = ?", user_name, password)
+	d.Table("users").First(&loginData, "user_name=? and password = ?", user_name, password)
 	defer d.Close()
 	return loginData
 }
@@ -51,7 +51,7 @@ func UserRegister(user_name string) User {
 func UserRegisterID(id int) User {
 	d := GormConnect()
 	selData := User{}
-	d.First(&selData, "id=?", id)
+	d.Table("users").First(&selData, "id=?", id)
 	defer d.Close()
 	return selData
 }
@@ -76,7 +76,7 @@ func Logout(ctx *gin.Context) {
 func UserCreate(user_name string) User {
 	d := GormConnect()
 	selData := User{}
-	d.First(&selData, "user_name=?", user_name)
+	d.Table("users").First(&selData, "user_name=?", user_name)
 	defer d.Close()
 	return selData
 }
@@ -98,12 +98,3 @@ func PostFoundOne(id int) Post {
 	defer d.Close()
 	return selData
 }
-
-// ユーザーIDからユーザーの投稿一覧を取得
-// func ChangeName(id int) Post {
-// 	d := GormConnect()
-// 	selData := Post{}
-// 	d.Table("posts").Find(&selData, "user_id=?", id)
-// 	defer d.Close()
-// 	return selData
-// }

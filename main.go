@@ -523,8 +523,6 @@ func main() {
 		session := sessions.Default(ctx)
 		LoginSession.User_name = session.Get("User_name")
 
-		fmt.Println(PostInfo.User_name)
-
 		if PostInfo.User_name != "" {
 			if LoginSession.User_name != nil {
 				user_name := LoginSession.User_name.(string)
