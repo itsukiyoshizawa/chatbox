@@ -10,11 +10,11 @@ import (
 
 func GormConnect() *gorm.DB {
 	DBMS := "mysql"
-	USER := "baae2706f3809d"
-	PASS := "41e4ceff"
+	USER := "b5c7eb6d281e5d"
+	PASS := "fb1ec773"
 	PROTOCOL := "us-cdbr-east-06.cleardb.net"
-	DBNAME := "heroku_669397f69b32401"
-	CONNECT := USER + ":" + PASS + "@tcp(" + PROTOCOL + ":3306)/" + DBNAME + "?parseTime=true"
+	DBNAME := "heroku_d0a101037db1ece"
+	CONNECT := USER + ":" + PASS + "@tcp(" + PROTOCOL + ":3306)/" + DBNAME + "?parseTime=true&reconnect=true"
 
 	db, err := gorm.Open(DBMS, CONNECT)
 
