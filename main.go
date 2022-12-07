@@ -212,6 +212,7 @@ func main() {
 	// 投稿作成ページ
 	router.POST("/create", func(ctx *gin.Context) {
 		Text, _ := ctx.GetPostForm("text")
+
 		session := sessions.Default(ctx)
 		LoginSession.User_name = session.Get("User_name")
 		user_name := LoginSession.User_name.(string)
